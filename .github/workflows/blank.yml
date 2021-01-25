@@ -23,22 +23,22 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - run: >
-        apt-get update && apt-get install -y 
-        build-essential
-        python3.8
-        uuid-dev
-        iasl
-        git
-        gcc
-        nasm
-        python3-distutils
-        gcc-arm-linux-gnueabi
-        gcc-aarch64-linux-gnu
-        gcc-riscv64-unknown-elf
-        gcc-x86-64-linux-gnu
-      && apt-get clean
-      && ln -sf /usr/bin/python3.8 /usr/bin/python
-        
+          apt-get update && apt-get install -y 
+          build-essential
+          python3.8
+          uuid-dev
+          iasl
+          git
+          gcc
+          nasm
+          python3-distutils
+          gcc-arm-linux-gnueabi
+          gcc-aarch64-linux-gnu
+          gcc-riscv64-unknown-elf
+          gcc-x86-64-linux-gnu
+          && apt-get clean
+          && ln -sf /usr/bin/python3.8 /usr/bin/python
+
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
         with:
