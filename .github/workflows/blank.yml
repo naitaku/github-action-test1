@@ -22,15 +22,47 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - run: >
+        apt-get update && apt-get install -y 
+        build-essential
+        python3.8
+        uuid-dev
+        iasl
+        git
+        gcc
+        nasm
+        python3-distutils
+        gcc-arm-linux-gnueabi
+        gcc-aarch64-linux-gnu
+        gcc-riscv64-unknown-elf
+        gcc-x86-64-linux-gnu
+      && apt-get clean
+      && ln -sf /usr/bin/python3.8 /usr/bin/python
+        
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        with:
+          repository: https://github.com/tianocore/edk2.git
+          submodules: recursive 
+          path: edk2 
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - uses: actions/checkout@v2
+        with:
+          repository: https://github.com/tianocore/edk2-platforms.git
+          submodules: recursive 
+          path: edk2-platforms
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      - uses: actions/checkout@v2
+        with:
+          repository: https://github.com/tianocore/edk2-non-osi.git
+          submodules: recursive 
+          path: edk2-non-osi
+
+      - uses: actions/checkout@v2
+        with:
+          repository: https://github.com/IntelFsp/FSP.git
+          submodules: recursive 
+          path: FSP
+      - run: cd edk2-platforms/Platform/Intel
+      - run: python build_bios.py -p CometlakeURvp -t GCC5 -r
