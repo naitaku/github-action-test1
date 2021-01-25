@@ -36,33 +36,32 @@ jobs:
           gcc-arm-linux-gnueabi
           gcc-aarch64-linux-gnu
           gcc-riscv64-linux-gnu
-          gcc-x86-64-linux-gnu
           && sudo apt-get clean
           && sudo ln -sf /usr/bin/python3.8 /usr/bin/python
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
         with:
-          repository: https://github.com/tianocore/edk2.git
+          repository: tianocore/edk2
           submodules: recursive 
           path: edk2 
 
       # Runs a single command using the runners shell
       - uses: actions/checkout@v2
         with:
-          repository: https://github.com/tianocore/edk2-platforms.git
+          repository: tianocore/edk2-platforms
           submodules: recursive 
           path: edk2-platforms
 
       - uses: actions/checkout@v2
         with:
-          repository: https://github.com/tianocore/edk2-non-osi.git
+          repository: tianocore/edk2-non-osi
           submodules: recursive 
           path: edk2-non-osi
 
       - uses: actions/checkout@v2
         with:
-          repository: https://github.com/IntelFsp/FSP.git
+          repository: IntelFsp/FSP
           submodules: recursive 
           path: FSP
       - run: cd edk2-platforms/Platform/Intel
