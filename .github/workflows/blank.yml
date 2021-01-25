@@ -43,26 +43,26 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: tianocore/edk2
-          submodules: recursive 
+          submodules: true 
           path: edk2 
 
       # Runs a single command using the runners shell
       - uses: actions/checkout@v2
         with:
           repository: tianocore/edk2-platforms
-          submodules: recursive 
+          submodules: true 
           path: edk2-platforms
 
       - uses: actions/checkout@v2
         with:
           repository: tianocore/edk2-non-osi
-          submodules: recursive 
+          submodules: true 
           path: edk2-non-osi
 
       - uses: actions/checkout@v2
         with:
           repository: IntelFsp/FSP
-          submodules: recursive 
+          submodules: true 
           path: FSP
       - run: cd edk2-platforms/Platform/Intel
       - run: python build_bios.py -p CometlakeURvp -t GCC5 -r
