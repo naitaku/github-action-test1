@@ -35,8 +35,6 @@ jobs:
           python3-distutils
           gcc-arm-linux-gnueabi
           gcc-aarch64-linux-gnu
-          gcc-riscv64-unknown-elf
-          gcc-x86-64-linux-gnu
           && sudo apt-get clean
           && sudo ln -sf /usr/bin/python3.8 /usr/bin/python
 
