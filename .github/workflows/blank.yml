@@ -64,5 +64,6 @@ jobs:
           repository: IntelFsp/FSP
           submodules: true 
           path: FSP
+      - run: git config --global url.https://github.com/neverware-mirrors/cmocka.git.insteadOf https://git.cryptomilk.org/projects/cmocka.git
       - run: cd edk2-platforms/Platform/Intel
       - run: python build_bios.py -p CometlakeURvp -t GCC5 -r
