@@ -39,6 +39,9 @@ jobs:
           && sudo apt-get clean
           && sudo ln -sf /usr/bin/python3.8 /usr/bin/python
 
+      # Use altername cmocka repo
+      - run: git config --global url.https://github.com/neverware-mirrors/cmocka.git.insteadOf https://git.cryptomilk.org/projects/cmocka.git
+
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
         with:
@@ -64,6 +67,5 @@ jobs:
           repository: IntelFsp/FSP
           submodules: true 
           path: FSP
-      - run: git config --global url.https://github.com/neverware-mirrors/cmocka.git.insteadOf https://git.cryptomilk.org/projects/cmocka.git
       - run: cd edk2-platforms/Platform/Intel
       - run: python build_bios.py -p CometlakeURvp -t GCC5 -r
