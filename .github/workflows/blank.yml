@@ -67,5 +67,4 @@ jobs:
           repository: IntelFsp/FSP
           submodules: true 
           path: FSP
-      - run: cd edk2-platforms/Platform/Intel
-      - run: python build_bios.py -p CometlakeURvp -t GCC5 -r
+      - run: cd edk2-platforms/Platform/Intel && python build_bios.py -p CometlakeURvp -t GCC5 -r
