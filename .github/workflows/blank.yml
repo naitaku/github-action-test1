@@ -22,22 +22,22 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - run: >
+      - run: |
           sudo apt-get update 
-          && sudo apt-get install -y 
-          build-essential
-          python3.8
-          uuid-dev
-          iasl
-          git
-          gcc
-          nasm
-          python3-distutils
-          gcc-arm-linux-gnueabi
-          gcc-aarch64-linux-gnu
+          sudo apt-get install -y 　\
+          build-essential　\
+          python3.8　\
+          uuid-dev　\
+          iasl　\
+          git　\
+          gcc　\
+          nasm　\
+          python3-distutils　\
+          gcc-arm-linux-gnueabi　\
+          gcc-aarch64-linux-gnu　\
           gcc-riscv64-linux-gnu
-          && sudo apt-get clean
-          && sudo ln -sf /usr/bin/python3.8 /usr/bin/python
+          sudo apt-get clean
+          sudo ln -sf /usr/bin/python3.8 /usr/bin/python
 
       # Use altername cmocka repo
       - run: git config --global url.https://github.com/neverware-mirrors/cmocka.git.insteadOf https://git.cryptomilk.org/projects/cmocka.git
