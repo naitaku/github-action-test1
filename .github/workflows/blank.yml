@@ -76,6 +76,6 @@ jobs:
           python build_bios.py -p CometlakeURvp -t GCC5 -r
 
       - uses: actions/upload-artifact@v2
-          with:
-            name: CometlakeURvp_Release
-            path: Build/CometlakeOpenBoardPkg/CometlakeURvp/RELEASE_GCC5/FV/COMETLAKEURVP.fd
+        with:
+          name: CometlakeURvp_Release
+          path: Build/CometlakeOpenBoardPkg/CometlakeURvp/RELEASE_GCC5/FV/COMETLAKEURVP.fd
