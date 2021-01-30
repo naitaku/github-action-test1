@@ -5,7 +5,7 @@ name: CI
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-#  push:
+  push:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -42,29 +42,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
         with:
-          repository: tianocore/edk2
           submodules: true 
-          path: edk2 
 
-      # Runs a single command using the runners shell
-      - uses: actions/checkout@v2
-        with:
-          repository: tianocore/edk2-platforms
-          submodules: true 
-          path: edk2-platforms
+      - run: git submodule foreach git submodule update --init --force --depth=1
 
-      - uses: actions/checkout@v2
-        with:
-          repository: tianocore/edk2-non-osi
-          submodules: true 
-          path: edk2-non-osi
-
-      - uses: actions/checkout@v2
-        with:
-          repository: IntelFsp/FSP
-          submodules: true 
-          path: FSP
-
+      # Run the build commands
       - run: |
           cd edk2
           source ./edksetup.sh
