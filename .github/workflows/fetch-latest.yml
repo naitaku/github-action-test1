@@ -14,5 +14,5 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           git submodule update --remote 
-          git commit -m "[CI] Update"
+          git commit -am "[CI] Update"
           git push    
