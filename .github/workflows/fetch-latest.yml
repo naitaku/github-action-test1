@@ -1,0 +1,18 @@
+name: Fetch the latest source
+on: 
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+jobs:
+  submodule_update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodule: 'true'
+      - run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git submodule update --remote 
+          git commit -m "[CI] Update"
+          git push    
