@@ -14,7 +14,7 @@ jobs:
       matrix:
         config: 
           - {platformname: "RPi4", dscfile: "Platform/RaspberryPi/RPi4/RPi4.dsc", arch: "AARCH64"}
-          - {platformname: "FreedomU540HiFiveUnleashedBoard", dscfile: "Platform/SiFive/U5SeriesPkg/FreedomU540HiFiveUnleashedBoard/U540.dsc", arch:"RISCV64"}
+          - {platformname: "FreedomU540HiFiveUnleashedBoard", dscfile: "Platform/SiFive/U5SeriesPkg/FreedomU540HiFiveUnleashedBoard/U540.dsc", arch: "RISCV64"}
         buildtarget: ["RELEASE", "DEBUG"]
     steps:
       - run: >
