@@ -1,25 +1,18 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Build Intel platforms
 
-# Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: 
       - main
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    strategy:
+      matrix:
+        platformname: ["GalagoPro3", KabylakeRvp3", "UpXtreme", "WhiskeylakeURvp", "CometlakeURvp"]
+        buildtarget: ["RELEASE", "DEBUG"]
     steps:
       - run: >
           sudo apt-get update
@@ -32,20 +25,16 @@ jobs:
           gcc
           nasm
           python3-distutils
-          gcc-arm-linux-gnueabi
-          gcc-aarch64-linux-gnu
-          gcc-riscv64-linux-gnu
           && sudo apt-get clean
           && sudo ln -sf /usr/bin/python3.8 /usr/bin/python
 
       # Use altername cmocka repo
+      # https://github.com/tianocore/edk2/commit/be746104d1766a8c363e74d6063144657820d688
       - run: git config --global url.https://github.com/neverware-mirrors/cmocka.git.insteadOf https://git.cryptomilk.org/projects/cmocka.git
 
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
         with:
           submodules: true 
-
       - run: git submodule foreach git submodule update --init --force --depth=1
 
       # Run the build commands
@@ -54,9 +43,9 @@ jobs:
           source ./edksetup.sh
           cd ..
           cd edk2-platforms/Platform/Intel
-          python build_bios.py -p CometlakeURvp -t GCC5 -r
+          python build_bios.py -p ${{ matrix.platformname }} -t GCC5 --${{ matrix.buildtarget }}
 
       - uses: actions/upload-artifact@v2
         with:
-          name: CometlakeURvp_Release
-          path: Build/CometlakeOpenBoardPkg/CometlakeURvp/RELEASE_GCC5/FV/COMETLAKEURVP.fd
+          name: ${{ matrix.platformname }}_${{ matrix.buildtarget }}
+          path: Build/*/${{ matrix.platformname }}/${{ matrix.buildtarget }}_GCC5/FV/*.fd
