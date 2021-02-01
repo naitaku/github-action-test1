@@ -10,8 +10,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        platformname: ["GalagoPro3", KabylakeRvp3", "UpXtreme", "WhiskeylakeURvp", "CometlakeURvp"]
+        platformname: ["GalagoPro3", "KabylakeRvp3", "UpXtreme", "WhiskeylakeURvp", "CometlakeURvp"]
         buildtarget: ["RELEASE", "DEBUG"]
     steps:
       - run: >
