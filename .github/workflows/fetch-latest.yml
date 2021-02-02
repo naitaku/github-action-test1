@@ -17,10 +17,4 @@ jobs:
           if ! git diff --exit-code --quiet; then
             git commit -am "$(date +"%Y-%m-%d")"
             git push
-            curl \
-              -X POST \
-              -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-              -H "Accept: application/vnd.github.v3+json" \
-              https://api.github.com/repos/naitaku/github-action-test1/dispatches \
-              -d '{"event_type":"build"}'
           fi

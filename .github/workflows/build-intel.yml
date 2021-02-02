@@ -2,8 +2,11 @@ name: Build Intel platforms
 
 on:
   workflow_dispatch:
-  repository_dispatch:
-    types: [build]
+  workflow_run:
+    workflows:
+      - Fetch the latest source
+    types:
+      - completed
 
 jobs:
   build:
