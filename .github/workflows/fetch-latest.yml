@@ -9,6 +9,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
+          # PAT is required for triggering push event
+          # https://docs.github.com/en/actions/reference/authentication-in-a-workflow#using-the-github_token-in-a-workflow
+          token: ${{ secrets.REPO_PERSONAL_ACCESS_TOKEN }}
           submodules: 'true'
       - run: |
           git config user.name github-actions[bot]
