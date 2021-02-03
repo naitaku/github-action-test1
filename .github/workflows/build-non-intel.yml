@@ -56,7 +56,8 @@ jobs:
             python3-distutils \
             gcc-arm-linux-gnueabi \
             gcc-aarch64-linux-gnu \
-            gcc-riscv64-unknown-elf 
+            gcc-riscv64-unknown-elf \
+            device-tree-compiler
           sudo apt-get clean
           sudo ln -sf /usr/bin/python3.8 /usr/bin/python
 
