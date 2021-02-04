@@ -3,6 +3,7 @@ name: Build non Intel platforms
 on:
   push: 
     branches: [main]
+    paths: [edk2, edk2-platforms, edk2-non-osi]
   workflow_dispatch:
 
 jobs:
@@ -36,9 +37,9 @@ jobs:
           - platformname: DeveloperBox
             dscfile: Platform/Socionext/DeveloperBox/DeveloperBox.dsc
             arch: AARCH64
-          - platformname: DeveloperBoxMm
-            dscfile: Platform/Socionext/DeveloperBox/DeveloperBoxMm.dsc
-            arch: AARCH64
+          # - platformname: DeveloperBoxMm
+          #   dscfile: Platform/Socionext/DeveloperBox/DeveloperBoxMm.dsc
+          #   arch: AARCH64
         buildtarget: 
           - RELEASE
           - DEBUG

@@ -1,1 +1,2 @@
-theme: jekyll-theme-cayman
+theme: jekyll-theme-minimal
+exclude: [edk2, edk2-platforms, edk2-non-osi, FSP]
