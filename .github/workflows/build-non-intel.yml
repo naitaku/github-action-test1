@@ -1,4 +1,4 @@
-name: Build non Intel platforms
+name: Build edk2-platforms
 
 on:
   push: 
