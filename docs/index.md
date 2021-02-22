@@ -22,7 +22,7 @@ The links below don't require your Github login.
 ### Intel
 
 | Platform | RELEASE | DEBUG |
-|:--------|:------- |:-----|
+| -------- | ------- | ----- |
 | GalagoPro3 | [GalagoPro3_RELEASE_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-intel-platforms/main/GalagoPro3_RELEASE_GCC5.zip) | [GalagoPro3_DEBUG_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-intel-platforms/main/GalagoPro3_DEBUG_GCC5.zip) |
 | KabylakeRvp3 | [KabylakeRvp3_RELEASE_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-intel-platforms/main/KabylakeRvp3_RELEASE_GCC5.zip) | [KabylakeRvp3_DEBUG_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-intel-platforms/main/KabylakeRvp3_DEBUG_GCC5.zip) |
 | UpXtreme | [UpXtreme_RELEASE_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-intel-platforms/main/UpXtreme_RELEASE_GCC5.zip) | [UpXtreme_DEBUG_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-intel-platforms/main/UpXtreme_DEBUG_GCC5.zip) |
