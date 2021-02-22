@@ -1,37 +1,48 @@
-## Welcome to GitHub Pages
+# Unofficial edk2-platforms nightly build 
 
-You can use the [editor on GitHub](https://github.com/naitaku/github-action-test1/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+This repository provides unofficial
+[tianocore/edk2-platforms](https://github.com/tianocore/edk2-platforms)
+nightly build.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Built binaries are saved as artifacts in Github Actions.
+You can download them from here. Github login is required to download the artifacts.
 
-### Markdown
+https://github.com/naitaku/edk2-platforms-build/actions?query=branch%3Amain+event%3Apush
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+They will be retained for 90 days.
 
-```markdown
-Syntax highlighted code block
+## The latest built binaries
 
-# Header 1
-## Header 2
-### Header 3
+The links below don't require your Github login.
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/naitaku/github-action-test1/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+### Intel
+| Platform | RELEASE | DEBUG |
+| -------- | ------- | ----- |
+| GalagoPro3 | [GalagoPro3_RELEASE_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-intel-platforms/main/GalagoPro3_RELEASE_GCC5.zip) | [GalagoPro3_DEBUG_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-intel-platforms/main/GalagoPro3_DEBUG_GCC5.zip) |
+| KabylakeRvp3 | [KabylakeRvp3_RELEASE_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-intel-platforms/main/KabylakeRvp3_RELEASE_GCC5.zip) | [KabylakeRvp3_DEBUG_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-intel-platforms/main/KabylakeRvp3_DEBUG_GCC5.zip) |
+| UpXtreme | [UpXtreme_RELEASE_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-intel-platforms/main/UpXtreme_RELEASE_GCC5.zip) | [UpXtreme_DEBUG_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-intel-platforms/main/UpXtreme_DEBUG_GCC5.zip) |
+| WhiskeylakeURvp | [WhiskeylakeURvp_RELEASE_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-intel-platforms/main/WhiskeylakeURvp_RELEASE_GCC5.zip) | [WhiskeylakeURvp_DEBUG_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-intel-platforms/main/WhiskeylakeURvp_DEBUG_GCC5.zip) |
+| CometlakeURvp | [CometlakeURvp_RELEASE_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-intel-platforms/main/CometlakeURvp_RELEASE_GCC5.zip) | [CometlakeURvp_DEBUG_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-intel-platforms/main/CometlakeURvp_DEBUG_GCC5.zip) |
+### Raspberry Pi
+| Platform | RELEASE | DEBUG |
+| -------- | ------- | ----- |
+| RPi3_AARCH64 | [RPi3_AARCH64_RELEASE_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-edk2-platforms/main/RPi3_AARCH64_RELEASE_GCC5.zip) | [RPi3_AARCH64_DEBUG_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-edk2-platforms/main/RPi3_AARCH64_DEBUG_GCC5.zip) |
+| RPi4_AARCH64 | [RPi4_AARCH64_RELEASE_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-edk2-platforms/main/RPi4_AARCH64_RELEASE_GCC5.zip) | [RPi4_AARCH64_DEBUG_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-edk2-platforms/main/RPi4_AARCH64_DEBUG_GCC5.zip) |
+### Arm
+| Platform | RELEASE | DEBUG |
+| -------- | ------- | ----- |
+| ArmJuno_AARCH64 | [ArmJuno_AARCH64_RELEASE_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-edk2-platforms/main/ArmJuno_AARCH64_RELEASE_GCC5.zip) | [ArmJuno_AARCH64_DEBUG_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-edk2-platforms/main/ArmJuno_AARCH64_DEBUG_GCC5.zip) |
+| Sgi575_AARCH64 | [Sgi575_AARCH64_RELEASE_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-edk2-platforms/main/Sgi575_AARCH64_RELEASE_GCC5.zip) | [Sgi575_AARCH64_DEBUG_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-edk2-platforms/main/Sgi575_AARCH64_DEBUG_GCC5.zip) |
+### BeagleBoard
+| Platform | RELEASE | DEBUG |
+| -------- | ------- | ----- |
+| BeagleBoard_ARM | [BeagleBoard_ARM_RELEASE_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-edk2-platforms/main/BeagleBoard_ARM_RELEASE_GCC5.zip) | [BeagleBoard_ARM_DEBUG_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-edk2-platforms/main/BeagleBoard_ARM_DEBUG_GCC5.zip) |
+### SiFive (RISC-V)
+| Platform | RELEASE | DEBUG |
+| -------- | ------- | ----- |
+| FreedomU500VC707_RISCV64 | [FreedomU500VC707_RISCV64_RELEASE_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-edk2-platforms/main/FreedomU500VC707_RISCV64_RELEASE_GCC5.zip) | [FreedomU500VC707_RISCV64_DEBUG_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-edk2-platforms/main/FreedomU500VC707_RISCV64_DEBUG_GCC5.zip) |
+| FreedomU540HiFiveUnleashed_RISCV64 | [FreedomU540HiFiveUnleashed_RISCV64_RELEASE_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-edk2-platforms/main/FreedomU540HiFiveUnleashed_RISCV64_RELEASE_GCC5.zip) | [FreedomU540HiFiveUnleashed_RISCV64_DEBUG_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-edk2-platforms/main/FreedomU540HiFiveUnleashed_RISCV64_DEBUG_GCC5.zip) |
+### Socionext
+| Platform | RELEASE | DEBUG |
+| -------- | ------- | ----- |
+| DeveloperBox_AARCH64 | [DeveloperBox_AARCH64_RELEASE_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-edk2-platforms/main/DeveloperBox_AARCH64_RELEASE_GCC5.zip) | [DeveloperBox_AARCH64_DEBUG_GCC5](https://nightly.link/naitaku/edk2-platforms-build/workflows/build-edk2-platforms/main/DeveloperBox_AARCH64_DEBUG_GCC5.zip) |
